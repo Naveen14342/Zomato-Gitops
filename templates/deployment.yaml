@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.zomato.name }}
+  labels:
+    app: {{ .Values.zomato.app }}
+spec:
+  replicas: {{ .Values.zomato.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.zomato.app }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.zomato.app }}
+    spec:
+      containers:
+        - name: {{ .Values.zomato.name }}
+          image: "{{ .Values.zomato.image.repository }}:{{ .Values.zomato.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.zomato.port }}

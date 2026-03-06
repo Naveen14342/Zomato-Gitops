@@ -1,0 +1,14 @@
+# Zomato App
+zomato:
+  name: zomato
+  app: zomato
+  replicas: 2
+  image:
+    repository: kastrov/zomato
+    tag: latest
+  port: 3000
+  targetPort: 3000
+  
+  type: LoadBalancer
+
+# 
