@@ -2,7 +2,7 @@
 zomato:
   name: zomato
   app: zomato
-  replicas: 2
+  replicas: 5
   image:
     repository: kastrov/zomato
     tag: latest
